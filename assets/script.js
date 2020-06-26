@@ -26,7 +26,25 @@ var timeUpdate = function() {
             $(this).addClass("future");
         }
     });
+    // listeners
+    $(".saveBtn").on("click", function(){
+        var text = $(this).siblings("#task-description").val();
+        var time = $(this).parent().attr("id");
+        localStorage.setItem(time, text);
+    });
+};
 
+// loading in text values
+
+$("#time-9 #task-description").val(localStorage.getItem("time-9"));
+$("#time-10 #task-description").val(localStorage.getItem("time-10"));
+$("#time-11 #task-description").val(localStorage.getItem("time-11"));
+$("#time-12 #task-description").val(localStorage.getItem("time-12"));
+$("#time-13 #task-description").val(localStorage.getItem("time-13"));
+$("#time-14 #task-description").val(localStorage.getItem("time-14"));
+$("#time-15 #task-description").val(localStorage.getItem("time-15"));
+$("#time-16 #task-description").val(localStorage.getItem("time-16"));
+$("#time-17 #task-description").val(localStorage.getItem("time-17"));
 
 var timeCheck = setInterval(timeUpdate, 15000);
 timeUpdate();
