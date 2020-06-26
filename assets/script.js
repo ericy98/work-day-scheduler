@@ -28,4 +28,5 @@ var timeUpdate = function() {
     });
 
 
+var timeCheck = setInterval(timeUpdate, 15000);
 timeUpdate();
