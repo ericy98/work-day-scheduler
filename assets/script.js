@@ -5,7 +5,17 @@ var today = moment().format("[Today is] dddd, MMMM Do YYYY");
 var timeBlock = $(".time-block");
 var taskText = $("#task-description");
 var saveBtn = $(".saveBtn");
-var hour = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
+
+// loading in text values
+$("#time-9 #task-description").val(localStorage.getItem("time-9"));
+$("#time-10 #task-description").val(localStorage.getItem("time-10"));
+$("#time-11 #task-description").val(localStorage.getItem("time-11"));
+$("#time-12 #task-description").val(localStorage.getItem("time-12"));
+$("#time-13 #task-description").val(localStorage.getItem("time-13"));
+$("#time-14 #task-description").val(localStorage.getItem("time-14"));
+$("#time-15 #task-description").val(localStorage.getItem("time-15"));
+$("#time-16 #task-description").val(localStorage.getItem("time-16"));
+$("#time-17 #task-description").val(localStorage.getItem("time-17"));
 
 var timeUpdate = function() {
     var currentTime = moment().hour();
@@ -33,18 +43,6 @@ var timeUpdate = function() {
         localStorage.setItem(time, text);
     });
 };
-
-// loading in text values
-
-$("#time-9 #task-description").val(localStorage.getItem("time-9"));
-$("#time-10 #task-description").val(localStorage.getItem("time-10"));
-$("#time-11 #task-description").val(localStorage.getItem("time-11"));
-$("#time-12 #task-description").val(localStorage.getItem("time-12"));
-$("#time-13 #task-description").val(localStorage.getItem("time-13"));
-$("#time-14 #task-description").val(localStorage.getItem("time-14"));
-$("#time-15 #task-description").val(localStorage.getItem("time-15"));
-$("#time-16 #task-description").val(localStorage.getItem("time-16"));
-$("#time-17 #task-description").val(localStorage.getItem("time-17"));
 
 var timeCheck = setInterval(timeUpdate, 15000);
 timeUpdate();
